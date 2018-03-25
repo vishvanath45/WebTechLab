@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="container" style ="margin-left:auto; margin-right:auto;">
+		<div style="float: left;">
+			<form id="registration" method = 'POST' action = 'stud_login.php'>
+				<h1>Student Login</h1>
+				<div class="login">
+					<label for="username">
+						<span>Username</span>
+						<input type="text" name = "username" id="username" minlength="3" required>
+						<ul class="input-requirements">
+							<li>At least 3 characters long</li>
+							<li>Must only contain letters and numbers (no special characters)</li>
+						</ul>
+					</label>
+					<label for="password">
+						<span>Password</span>
+						<input type="password" name = "password" id="password" maxlength="100" minlength="8" required>
+						<ul class="input-requirements">
+							<li>At least 8 characters long (and less than 100 characters)</li>
+							<li>Contains at least 1 number</li>
+							<li>Contains at least 1 lowercase letter</li>
+							<li>Contains at least 1 uppercase letter</li>
+							<li>Contains a special character (e.g. @ !)</li>
+						</ul>
+					</label>
+					<br>
+					<input type="submit" style="margin-left: 35%;">
+					<br>
+					<a href="./register.html">Don't have account, Make one!!</a>
+				</div>
+			</form>
+		</div>
+		<div style="float: right;">
+			<h1>Admin Login</h1>
+			<form class="login" id="registration" method = 'POST' action = 'admin_login.php'>
+				<label for="username">
+					<span>Username</span>
+					<input type="text" name="username_admin" id="username_admin" minlength="3" required>
+					<ul class="input-requirements">
+						<li>At least 3 characters long</li>
+						<li>Must only contain letters and numbers (no special characters)</li>
+					</ul>
+				</label>
+				<label for="password">
+					<span>Password</span>
+					<input type="password" name="password_admin" id="password_admin" maxlength="100" minlength="8" required>
+					<ul class="input-requirements">
+						<li>At least 8 characters long (and less than 100 characters)</li>
+						<li>Contains at least 1 number</li>
+						<li>Contains at least 1 lowercase letter</li>
+						<li>Contains at least 1 uppercase letter</li>
+						<li>Contains a special character (e.g. @ !)</li>
+					</ul>
+				</label>
+				<br>
+				<input type="submit" style="margin-left: 35%;">
+			</form>
+		</div>
+	</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

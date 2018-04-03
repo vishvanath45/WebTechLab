@@ -47,19 +47,29 @@ $session = mysqli_escape_string($connection, $_POST['session']);
 
 $school12 = mysqli_escape_string($connection, $_POST['school12']);
 
-$affiliated12 = mysqli_escape_string($connection, $_POST['affiliated12']);
-
 $percent12 = mysqli_escape_string($connection, $_POST['percent12']);
 
-$pass12 = mysqli_escape_string($connection, $_POST['pass12']);
+$school10 = mysqli_escape_string($connection, $_POST['school10']);
 
+$percent10 = mysqli_escape_string($connection, $_POST['percent10']);
+
+$medical = mysqli_escape_string($connection, $_POST['medical']);
 
 // echo "un: $username  p: $password n: $uname cn: $contact\n";
 
-$q = "insert into user_data values('$username', '$password', '$uname', '$father', '$mother',
- '$gender', '$email', '$contact', '$address', '$city', '$state', '$pin', '$country')";
+$qq = "insert into user_data values('$username', '$password', '$uname', '$father', '$mother',
+ '$gender', '$email', '$contact', '$address', '$city', '$state', '$pin', '$country', 0, '$registration', '$dept', '$roll','$session','$school12','$percent12','$school10','$percent10','$medical');";
 
-$query = mysqli_query($connection, $q);
+
+$q = "insert into user_data values('$username', '$password')";
+
+
+
+$query = mysqli_query($connection, $qq);
+
+
+// echo($qq);
+
 
 if($query){
 	die("Succesfully inserted into table");

@@ -30,15 +30,18 @@ if($query->num_rows > 0)
 		$state = $row['state'];
 		$pin = $row['pin'];
 		$country = $row['country'];
+		$registration = $row['registration_no'];
+		$school12 = $row['school12'];
+		$dept = $row['dept'];
+		$roll = $row['roll_number'];
+		$session = $row['session'];
+		$school12 = $row['school12'];
+		$percent12 = $row['percent12'];
+		$school10 = $row['school10'];
+		$percent10 = $row['percent10'];
+		$medical = $row['medical'];
 	}	
 }
-
-
-
-
-
-
-
 
 ?>
 
@@ -66,7 +69,7 @@ if($query->num_rows > 0)
 			<div class="registration" style="">
 				<h3>Personal Details</h3>
 				<!-- <label for="username"> -->
-				<span>Username  :   <i><?php echo htmlentities($username); ?></i></span>
+				<span>Username  :  <?php echo htmlentities($username); ?></span>
 				<br>
 				<br>
 
@@ -142,121 +145,62 @@ if($query->num_rows > 0)
 				</label>
 				<br>
 				<br>
-
-				<!-- <label for="nation">
-					<span>Nationality</span>
-					<input type="text" id="nation" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
-				</label>
-			</div>
-			<div class="registration" style="float: right;">
-				<h3>Educational Details</h3>
 				<label for="registration">
-					<span>Registration Number</span>
-					<input type="text" name="registration" minlength="8" required>
-				</label><br><br>
+					<span>registration  :   <i><?php echo htmlentities($registration); ?></i></span>
+
+				</label>
+				<br>
+				<br>
 				<label for="dept">
-					<span>Department of</span>
-					<input type="text" name="dept" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only alphabets</li>
-					</ul>
+					<span>dept  :   <i><?php echo htmlentities($dept); ?></i></span>
+
 				</label>
+				<br>
+				<br>
 				<label for="roll">
-					<span>Roll Number</span>
-					<input type="text" name="roll" minlength="3" placeholder = "XX/YY/ZZ" required >
-					<ul class="input-requirements">
-						<li>Should be in format YY/Branch/Rollno.</li>
-					</ul>
+					<span>roll  :   <i><?php echo htmlentities($roll); ?></i></span>
+
 				</label>
+				<br>
+				<br>
 				<label for="session">
-					<span>Session</span>
-					<input type="text" name="session" placeholder = "YYYY-YYYY" required >
-					<ul class="input-requirements">
-						<li>Year of joining college to year of expected passout</li>
-					</ul>
+					<span>session  :   <i><?php echo htmlentities($session); ?></i></span>
+
 				</label>
-				<p>Semester :
-				    <select>
-					    <option value="1">1</option>
-					    <option value="2">2</option>
-					    <option value="3">3</option>
-					    <option value="4">4</option> 
-					    <option value="5">5</option>
-					    <option value="6">6</option>
-					    <option value="7">7</option>
-					    <option value="8">8</option>
-					</select>
-				</p>
-				<hr> -->
-				<!-- <h3>Class 12 Details</h3>
+				<br>
+				<br>
 				<label for="school12">
-					<span>School Name</span>
-					<input type="text" name="school12" minlength="3" required >
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only alphabets</li>
-					</ul>
+					<span>school12  :   <i><?php echo htmlentities($school12); ?></i></span>
+
 				</label>
-				<label for="affiliated12">
-					<span>Affiliated to</span>
-					<input type="text" name="affiliated12" minlength="3" required >
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only alphabets</li>
-					</ul>
-				</label>
+				<br>
+				<br>
 				<label for="percent12">
-					<span>Percentage</span>
-					<input type="text" name="percent12" minlength="3" required >
-					<ul class="input-requirements">
-						<li>Calculated w.r.t. 100%</li>
-					</ul>
+					<span>percent12  :   <i><?php echo htmlentities($percent12); ?></i></span>
+
 				</label>
-				<label for="pass12">
-					<span>Passing Year</span>
-					<input type="number" name="pass10" min="1990" max="2100" required >
-				</label><br><br><hr>
-				<h3>Class 10 Details</h3>
+				<br>
+				<br>
 				<label for="school10">
-					<span>School Name</span>
-					<input type="text" name="school10" minlength="3" required >
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only alphabets</li>
-					</ul>
+					<span>school10  :   <i><?php echo htmlentities($school10); ?></i></span>
+
 				</label>
-				<label for="affiliated10">
-					<span>Affiliated to</span>
-					<input type="text" name="affiliated10" minlength="3" required >
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only alphabets</li>
-					</ul>
-				</label>
+				<br>
+				<br>
 				<label for="percent10">
-					<span>Percentage</span>
-					<input type="text" name="percent10" minlength="3" required >
-					<ul class="input-requirements">
-						<li>Calculated w.r.t. 100%</li>
-					</ul>
+					<span>percent10  :   <i><?php echo htmlentities($percent10); ?></i></span>
+
 				</label>
-				<label for="pass10">
-					<span>Passing Year</span>
-					<input type="number" name="pass10" min="1990" max="2100" required >
-				</label><br><br><hr>
-				<h3>Medical Details</h3>
+				<br>
+				<br>
 				<label for="medical">
-					<span>Medical History(if any)</span>
-					<textarea  name="medical" rows="3" cols="25"></textarea>
-					<ul class="input-requirements">
-						<li>Optional</li>
-					</ul>
-				</label> -->
+					<span>medical  :   <i><?php echo htmlentities($medical); ?></i></span>
+
+				</label>
+				<br>
+				<br>
+
+
 			
 	</div>
 

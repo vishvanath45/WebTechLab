@@ -13,7 +13,11 @@
 
 	// $q = "SELECT * FROM credentials WHERE username = '$username' and password = '$password' ";
 
-	$q = "select * from user_data, credentials where ( credentials.username = '$username' and credentials.password = '$password') or ( user_data.username = '$username' and user_data.password = '$password')";
+	$q = "select * from user_data where (username = '$username' and password = '$password' and verified = 1);";
+
+
+	// $q = "select * from user_data, credentials where ( credentials.username = '$username' and credentials.password = '$password') or ( user_data.username = '$username' and user_data.password = '$password')";
+
 
 	$query = mysqli_query($connection,$q);
 
@@ -22,13 +26,17 @@
 
 	// echo " $query .. $num_rows Rows \n";
 
-	if($num_rows > 1)
-	{
-		die("login successful");
+	if($num_rows > 0)
+	{	
+		$_SESSION['login_user'] = $username;
+
+
+		header("location: studentpanel.php");
+		// die("login successful");
 	}
 	else
 	{
-		die("Login failed");
+		die("Account not verified or Wrong Username Password");
 	}
 
 ?>

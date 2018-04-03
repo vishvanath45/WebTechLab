@@ -19,13 +19,14 @@
 
 	// echo "$num_rows Rows \n";
 
-	if($num_rows == 1)
-	{
-		die("login successful");
+	if($num_rows > 0)
+	{	
+		header("location: adminpanel.php");
+		// die("login successful");
 	}
 	else
 	{
-		die("Login failed");
+		die("Account not verified or Wrong Username Password");
 	}
 
 ?>

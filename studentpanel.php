@@ -1,142 +1,149 @@
+<?php
+session_start();
+
+$connection = mysqli_connect('localhost','root','toor','password');
+if(!$connection){
+	die("unable to connect to mysql");
+}
+
+
+$var = $_SESSION['login_user'];
+
+$q = "select * from user_data where username = '$var'";
+
+$query = mysqli_query($connection,$q);
+
+
+if($query->num_rows > 0)
+{
+	while($row = $query->fetch_assoc())
+	{	
+		$username = $row['username'];
+		$name = $row['name'];
+		$father = $row['father'];
+		$mother = $row['mother'];
+		$gender = $row['gender'];
+		$email = $row['email'];
+		$contact = $row['contact'];
+		$address = $row['address'];
+		$city = $row['city'];
+		$state = $row['state'];
+		$pin = $row['pin'];
+		$country = $row['country'];
+	}	
+}
+
+
+
+
+
+
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Register Yourself</title>
+	<title>User Profile</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
 	<ul class="navigation">
         <li><a>Student Information System</a></li>
-        <li style="padding-left: 60%;"><a href="./index.html">Home/Login</a></li>
-        <li><a href="./register.html">Register Yourself</a></li>
+        <li style="padding-left: 60%;"><a href="./index.html">Home</a></li>
+        <li><a href="logout.php">LOGOUT</a></li>
 		<!-- <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li> -->
     </ul>
-	<div class="container2">
-		<h1>Registration Form</h1>
-		<form id="registration" method = 'POST' action = 'stud_reg.php'>
-			<div class="registration" style="float: left;">
+
+			<div class="registration" style="">
 				<h3>Personal Details</h3>
 				<!-- <label for="username"> -->
-					<span>Username
-					<input type="text" name="username" minlength="3" required></span>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must only contain letters and numbers(no special characters)</li>
-					</ul>
-				<!-- </label> -->
-				<!-- <label for="password"> -->
-					<span>Password-
-					<input type="password" name="password" maxlength="100" minlength="8" required></span>
-					<ul class="input-requirements">
-						<li>At least 8 characters long (and less than 100 characters)</li>
-						<li>Contains at least 1 number</li>
-						<li>Contains at least 1 lowercase letter</li>
-						<li>Contains at least 1 uppercase letter</li>
-						<li>Contains a special character (e.g. @ !)</li>
-					</ul>
+				<span>Username  :   <i><?php echo htmlentities($username); ?></i></span>
+				<br>
+				<br>
+
+
 				<!-- </label> -->
 				<!-- <label for="name"> -->
-					<span>Your Name</span>
-					<input type="text" name="uname" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
+				<span>Name  :   <i><?php echo htmlentities($name); ?></i></span>
+				<br>
+				<br>
 				<!-- </label> -->
 				<label for="father">
-					<span>Father's Name</span>
-					<input type="text" name="father" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
+					<span>Father's Name  :   <i><?php echo htmlentities($father); ?></i></span>
+				<br>
+				<br>
+
 				</label>
+
 				<label for="mother">
-					<span>Mother's Name</span>
-					<input type="text" name="mother" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
+					<span>Mother's Name  :   <i><?php echo htmlentities($mother); ?></i></span>
 				</label>
-				<label for="dob">
-					<span>Date of Birth</span>
-					<input type="date" name="dob" minlength="3" placeholder = "XX/YY/ZZ" required >
-					<ul class="input-requirements">
-						<li>Should be in format MM/DD/YYYY</li>
-					</ul>
-				</label>
+				<br>
+				<br>
+
+
 				<label for="gender">
-					<span>Gender</span>
-					<input type="radio" name="gender" value="male" checked> Male
-					<input type="radio" name="gender" value="female"> Female<br>
-				</label><br>
-				<p>Caste:
-					<select>
-						<option value="op">OP</option>
-						<option value="obc">OBC</option>
-						<option value="sc">SC</option>
-						<option value="st">ST</option>
-					</select>
-				</p><br>
+					<span>Gender  :   <i><?php echo htmlentities($gender); ?></i></span>
+				</label>
+				<br>
+				<br>
+
 				<label for="email">
-					<span>Email id</span>
-					<input type="text" name="email" minlength="3" required>
-					<ul class="input-requirements">
-						<li>Must be a valid email id</li>
-					</ul>
+					<span>Email id  :   <i><?php echo htmlentities($email); ?></i></span>
 				</label>
+				<br>
+				<br>
+
 				<label for="contact">
-					<span>Contact Number</span>
-					<input type="text" name="contact" name="contact" required>
-					<ul class="input-requirements">
-						<li>Only numbers allowed</li>
-						<li>Enter a valid number</li>
-					</ul>
+					<span>Contact Number  :   <i><?php echo htmlentities($contact); ?></i></span>
 				</label>
+				<br>
+				<br>
+
 				<label for="address">
-					<span>Address</span>
-					<input type="text" name="address" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-					</ul>
+					<span>Address  :   <i><?php echo htmlentities($var); ?></i></span>
+
 				</label>
+				<br>
+				<br>
+
 				<label for="city">
-					<span>City</span>
-					<input type="text" name="city" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
+					<span>City  :   <i><?php echo htmlentities($city); ?></i></span>
 				</label>
+				<br>
+				<br>
+
 				<label for="state">
-					<span>State</span>
-					<input type="text" name="state" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
+					<span>State  :   <i><?php echo htmlentities($state); ?></i></span>
+
 				</label>
+				<br>
+				<br>
+
 				<label for="pin">
-					<span>PIN Code</span>
-					<input type="text" name="pin" minlength="3" required>
-					<ul class="input-requirements">
-						<li>Only numbers allowed</li>
-					</ul>
+					<span>PIN Code  :   <i><?php echo htmlentities($pin); ?></i></span>
+
 				</label>
+				<br>
+				<br>
+
 				<label for="country">
-					<span>Country</span>
-					<input type="text" name="country" minlength="3" required>
-					<ul class="input-requirements">
-						<li>At least 3 characters long</li>
-						<li>Must contain only letters</li>
-					</ul>
+					<span>Country  :   <i><?php echo htmlentities($country); ?></i></span>
+
 				</label>
-				<label for="nation">
+				<br>
+				<br>
+
+				<!-- <label for="nation">
 					<span>Nationality</span>
 					<input type="text" id="nation" minlength="3" required>
 					<ul class="input-requirements">
@@ -185,7 +192,7 @@
 					    <option value="8">8</option>
 					</select>
 				</p>
-				<hr>
+				<hr> -->
 				<!-- <h3>Class 12 Details</h3>
 				<label for="school12">
 					<span>School Name</span>
@@ -250,11 +257,8 @@
 						<li>Optional</li>
 					</ul>
 				</label> -->
-			</div>
-			<input type="submit" class="btn" style="margin-top: 80px;">
-		</form>
+			
 	</div>
 
-    <script src="js/form_validation.js"></script>
 </body>
 </html>

@@ -10,13 +10,13 @@
 <body>
     <ul class="navigation">
         <li><a>Student Information System</a></li>
-        <li style="padding-left: 60%;"><a href="#">Home/Login</a></li>
+        <li style="padding-left: 50%;"><a href="#">Home/Login</a></li>
         <li><a href="./register.html">Register Yourself</a></li>
         <!-- <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li> -->
     </ul>
-	<div class="container" style ="margin-left:auto; margin-right:auto;">
-		<div style="float: left;">
+	<!-- <div class="container" style ="margin-left:auto; margin-right:auto;"> -->
+		<div style="float: left; margin-left:15%;  margin-right:auto;">
 			<form id="registration" method = 'POST' action = 'stud_login.php'>
 				<h1>Student Login</h1>
 				<div class="login">
@@ -46,9 +46,9 @@
 				</div>
 			</form>
 		</div>
-		<div style="float: right;">
+		<div style="float: right; margin-right:15%; margin-left:auto;">
 			<h1>Admin Login</h1>
-			<form class="login" id="registration" method = 'POST' action = 'admin_login.php'>
+			<form class="login" id="registration1" method = 'POST' action = 'admin_login.php'>
 				<label for="username">
 					<span>Username</span>
 					<input type="text" name="username_admin" id="username_admin" minlength="3" required>
@@ -59,7 +59,7 @@
 				</label>
 				<label for="password">
 					<span>Password</span>
-					<input type="password" name="password_admin" id="password_admin" maxlength="100" minlength="8" required>
+					<input type="password" name="password_admin" id="password_admin" maxlength="100" minlength="2" required>
 					<ul class="input-requirements">
 						<li>At least 8 characters long (and less than 100 characters)</li>
 						<li>Contains at least 1 number</li>
@@ -69,10 +69,10 @@
 					</ul>
 				</label>
 				<br>
-				<input class="btn" type="submit" style="margin-left: 35%;">
+				<input class="btn" name = "submit_button" type="submit" style="margin-left: 35%;">
 			</form>
 		</div>
-	</div>
+	<!-- </div> -->
 
 	<script src="js/script.js"></script>
 </body>
